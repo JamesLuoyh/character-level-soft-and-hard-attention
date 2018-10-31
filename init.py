@@ -13,7 +13,7 @@ DEVICE = torch.device('cuda:0')
 print('CUDA:', USE_CUDA)
 print(DEVICE)
 
-seed = 32
+seed = 42
 np.random.seed(seed)
 torch.manual_seed(seed)
 torch.cuda.manual_seed(seed)

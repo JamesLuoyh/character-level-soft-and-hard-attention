@@ -18,8 +18,13 @@ class SoftAttention(nn.Module):
         encoder_proj = self.encoder_layer(value)
         query_proj = self.query_layer(query)
 
+
         # Calculate scores.
-        scores = self.attention_layer(encoder_proj, query_proj)
+        # TODO: is this correct?
+        
+        query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
+
+        scores = self.attention_layer(query_proj, encoder_proj)
         scores = scores.squeeze(2).unsqueeze(1)
         
         # Mask out invalid positions.
@@ -32,3 +37,5 @@ class SoftAttention(nn.Module):
         
         # The context vector is the weighted sum of the values.
         context = torch.bmm(alphas, value)
+
+        return context, alphas

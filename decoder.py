@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+from bahdanau_attention import BahdanauAttention 
 class Decoder(nn.Module):
     def __init__(self, emb_size, hidden_size, attention, num_layers=1, dropout=0.5,
                  bridge=True):
@@ -11,7 +11,7 @@ class Decoder(nn.Module):
         self.attention = attention
         self.dropout = dropout
         
-        self.rnn = nn.LSTM(emb_size + 2 * hidden_size, hidden_size, num_layers,
+        self.rnn = nn.GRU(emb_size + 2 * hidden_size, hidden_size, num_layers,
                            batch_first=True,  dropout=dropout)
 
         self.bridge = nn.Linear(2 * hidden_size, hidden_size, bias=True) if bridge else None
@@ -22,7 +22,7 @@ class Decoder(nn.Module):
 
     def forward_step(self, prev_embed, encoder_hidden, src_mask, hidden):
         query = hidden[-1].unsqueeze(1)
-        context, atten_probs = self.attention(query,
+        context, atten_probs = self.attention(query=query,
             value=encoder_hidden, mask=src_mask)
 
         # input feeding
@@ -44,6 +44,7 @@ class Decoder(nn.Module):
         if hidden is None:
             hidden = self.init_hidden(encoder_final)
         
+        # proj_key = self.attention.key_layer(encoder_hidden)
         decoder_states = []
         pre_output_vectors = []
 
@@ -63,4 +64,4 @@ class Decoder(nn.Module):
         if encoder_final is None:
             return None
         
-        return torch.tanh(self.bride(encoder_final))
+        return torch.tanh(self.bridge(encoder_final))
