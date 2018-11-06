@@ -23,8 +23,10 @@ class Encoder(nn.Module):
         output, _ = pad_packed_sequence(output, batch_first=True)
 
         # TODO: how is this bidirectional
-        fwd_final = h_final[0:h_final.size(0):2] #
-        bwd_final = h_final[1:h_final.size(0):2]
-        final = torch.cat([fwd_final, bwd_final], dim=2)
-
-        return output, final
+        fwdh_final = h_final[0:h_final.size(0):2] #
+        bwdh_final = h_final[1:h_final.size(0):2]
+        h_final = torch.cat([fwdh_final, bwdh_final], dim=2)
+        fwdc_final = c_final[0:c_final.size(0):2] #
+        bwdc_final = c_final[1:c_final.size(0):2]
+        c_final = torch.cat([fwdc_final, bwdc_final], dim=2)
+        return output, h_final, c_final

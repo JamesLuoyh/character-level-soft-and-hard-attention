@@ -39,6 +39,7 @@ def train_copy_task():
 
 def data_gen(num_words=11, batch_size=16, num_batches=100, length=10, pad_index=0, sos_index=1):
     """Simple data for copy task."""
+    batches = []
     for i in range(num_batches):
         data = torch.from_numpy(
             np.random.randint(1, num_words, size=(batch_size, length))
@@ -50,7 +51,8 @@ def data_gen(num_words=11, batch_size=16, num_batches=100, length=10, pad_index=
         trg = data
         src_lengths = [length-1] * batch_size
         trg_lengths = [length] * batch_size
-        yield Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index)
+        batches.append(Batch((src, src_lengths), (trg, trg_lengths), pad_index=pad_index))
+    return batches
 
 
 

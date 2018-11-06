@@ -4,7 +4,6 @@ import init
 class Batch:
     # TODO: why we need mask, what is pad_index
     def __init__(self, src, trg, pad_index=0):
-
         src, src_lengths = src
         self.src = src
         self.src_lengths = src_lengths

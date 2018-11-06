@@ -16,12 +16,13 @@ class SoftAttention(nn.Module):
     def forward(self, query=None, value=None, mask=None):
         assert mask is not None, "mask is required"
         encoder_proj = self.encoder_layer(value)
+        #[B, S, H]
         query_proj = self.query_layer(query)
-
+        #B, 1, H]
 
         # Calculate scores.
         # TODO: is this correct?
-        
+        # expand
         query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
 
         scores = self.attention_layer(query_proj, encoder_proj)
