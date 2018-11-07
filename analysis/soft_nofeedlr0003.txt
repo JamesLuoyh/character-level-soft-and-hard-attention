@@ -1,0 +1,189 @@
+Epoch 0
+Epoch Step: 50 Loss: 22.258659 Tokens per Sec: 688.401359
+Epoch Step: 100 Loss: 11.684230 Tokens per Sec: 543.449490
+Evaluation perplexity: 5.456956
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S HH S AE1 S HH S AE1 S HH S AE1 S HH S AE1 S HH S AE1')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S AE1 S AE1 S AE1 S AE1 S AE1 S AE1 S AE1 S AE1 S AE1 S AE1')
+
+Epoch 1
+Epoch Step: 50 Loss: 8.213699 Tokens per Sec: 650.960121
+Epoch Step: 100 Loss: 8.011475 Tokens per Sec: 485.910220
+Evaluation perplexity: 2.615764
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AH0 S UW1 S HH SH AH0 S HH SH AH0 S HH SH AH0 S HH SH AH0')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AA1 S AH0 S AH0 S AH0 S AH0 S AH0 S AH0 S AH0 S AH0 S')
+
+Epoch 2
+Epoch Step: 50 Loss: 5.219048 Tokens per Sec: 629.086117
+Epoch Step: 100 Loss: 7.375770 Tokens per Sec: 564.816425
+Evaluation perplexity: 2.203400
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH OW1 S W AW1 AH0 S W AW1 N UW1 S W AW1 N UW1 S W AW1 N')
+
+Epoch 3
+Epoch Step: 50 Loss: 3.907405 Tokens per Sec: 485.586665
+Epoch Step: 100 Loss: 6.502625 Tokens per Sec: 540.655999
+Evaluation perplexity: 1.805305
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 SH AA1 SH AH0 HH OW1 SH AA1 SH AH0 HH OW1 SH AA1 SH AH0 HH OW1')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 AH0 S W AW1 K W AW1 K W AW1 K W AW1 K W AW1 K')
+
+Epoch 4
+Epoch Step: 50 Loss: 5.087409 Tokens per Sec: 490.594725
+Epoch Step: 100 Loss: 5.964680 Tokens per Sec: 547.702061
+Evaluation perplexity: 1.844100
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 P HH OW1 SH AH0 SH AA1 S HH OW1 SH AH0 SH AA1 S HH OW1 SH')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 N S W AW1 N S W AW1 N S W AW1 N S W AW1 N')
+
+Epoch 5
+Epoch Step: 50 Loss: 6.471391 Tokens per Sec: 529.069893
+Epoch Step: 100 Loss: 4.883540 Tokens per Sec: 449.175596
+Evaluation perplexity: 1.742753
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0 SH AA1 SH AH0')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 N UW1 AH0 S W AW1 N UW1 AH0 S W AW1 N UW1 AH0 S W')
+
+Epoch 6
+Epoch Step: 50 Loss: 3.637795 Tokens per Sec: 507.975710
+Epoch Step: 100 Loss: 3.778181 Tokens per Sec: 469.097343
+Evaluation perplexity: 1.752132
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 N D AW1 N D AW1 N D AW1 N D AW1 N D AW1 N D')
+
+Epoch 7
+Epoch Step: 50 Loss: 3.927015 Tokens per Sec: 509.366672
+Epoch Step: 100 Loss: 4.252790 Tokens per Sec: 518.545397
+Evaluation perplexity: 1.768489
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH OW1 P OY1 P EH1 P AA1 P OW1 P OW1 P OW1 P OW1 P OW1 P OW1')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 N W UH2 S W AW1 N W UH2 S W AW1 N W UH2 S W')
+
+Epoch 8
+Epoch Step: 50 Loss: 5.292297 Tokens per Sec: 669.944760
+Epoch Step: 100 Loss: 5.099446 Tokens per Sec: 701.431663
+Evaluation perplexity: 1.597932
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W AW1 N D AW1 N D AW1 N D AW1 N D AW1 N D AW1 N D')
+
+Epoch 9
+Epoch Step: 50 Loss: 6.631414 Tokens per Sec: 578.373644
+Epoch Step: 100 Loss: 3.570088 Tokens per Sec: 563.589108
+Evaluation perplexity: 1.585350
+
+10
+47
+Example #1
+('Src : ', "s h o p p e r ' s </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>")
+('Trg : ', 'SH AA1 P ER0 Z </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'SH AA1 P SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH AA1 SH')
+
+10
+11
+Example #2
+('Src : ', 's w o o n e d </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Trg : ', 'S W UW1 N D </s> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S W UW1 N EH1 R W UW1 N EH1 R W UW1 N EH1 R W UW1 N EH1')

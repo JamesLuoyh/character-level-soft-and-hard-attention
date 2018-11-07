@@ -50,28 +50,28 @@ def lookup_words(x, vocab=None):
 def print_examples(example_iter, dataload, model,
                    n=2, max_len=100, 
                    sos_index=1, 
-                   src_eos_index=None, 
-                   trg_eos_index=None):
+                   src_eos_index=2, 
+                   trg_eos_index=2):
     """Prints N examples. Assumes batch size of 1."""
 
     model.eval()
     count = 0
-    print()
+    print
     
     if dataload.src_stoi is not None and dataload.trg_stoi is not None:
         src_eos_index = dataload.src_stoi[dataload.EOS_TOKEN]
         trg_sos_index = dataload.trg_stoi[dataload.SOS_TOKEN]
         trg_eos_index = dataload.trg_stoi[dataload.EOS_TOKEN]
     else:
-        src_eos_index = None
+        src_eos_index = 2
         trg_sos_index = 1
-        trg_eos_index = None
+        trg_eos_index = 2
         
     for i, batch in enumerate(example_iter):
-      
         src = batch.src.cpu().numpy()[0, :]
         trg = batch.trg_y.cpu().numpy()[0, :]
-
+        # print src
+        # print trg
         # remove </s> (if it is there)
         src = src[:-1] if src[-1] == src_eos_index else src
         trg = trg[:-1] if trg[-1] == trg_eos_index else trg      
@@ -83,7 +83,7 @@ def print_examples(example_iter, dataload, model,
         print("Src : ", " ".join(lookup_words(src, vocab=dataload.src_itos)))
         print("Trg : ", " ".join(lookup_words(trg, vocab=dataload.trg_itos)))
         print("Pred: ", " ".join(lookup_words(result, vocab=dataload.trg_itos)))
-        print()
+        print
         
         count += 1
         if count == n:

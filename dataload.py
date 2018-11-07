@@ -20,23 +20,23 @@ class Dataload:
             for line in f:
                 tokens = line.split()
                 tempsrc = []
-                if len(tokens[0]) > maxlen - 2 or len(tokens) > maxlen - 1:
+                if len(tokens[0]) > maxlen - 1 or len(tokens) > maxlen - 1:
                     continue
-                tempsrc.append(self.SOS_TOKEN)
+                # why don't we need it
+                # tempsrc.append(self.SOS_TOKEN)
                 tempsrc.extend(list(tokens[0]))
                 tempsrc.append(self.EOS_TOKEN)
-                while len(tempsrc) < maxlen:
-                    tempsrc.append(self.PAD_TOKEN)
+                # while len(tempsrc) < maxlen:
+                #     tempsrc.append(self.PAD_TOKEN)
                 src.append(tempsrc)
                 temptrg = []
                 temptrg.append(self.SOS_TOKEN)
                 temptrg.extend(tokens[1:])
                 temptrg.append(self.EOS_TOKEN)
-                while len(temptrg) < maxlen:
-                    temptrg.append(self.PAD_TOKEN)
+                # while len(temptrg) < maxlen:
+                #     temptrg.append(self.PAD_TOKEN)
                 trg.append(temptrg)
         
-
         self.src_stoi = {}
         self.src_itos = {}
         self.trg_stoi = {}
@@ -78,6 +78,7 @@ class Dataload:
                     counter += 1
                 temp.append(self.trg_stoi[phoneme])
             self.trg_final.append(temp)
+        self.trg_num = len(self.trg_stoi)
         datasize = len(src)
         validatesize = datasize / 10
         testsize = datasize / 10
@@ -85,13 +86,13 @@ class Dataload:
 
 
         self.train_src = self.src_final[0:trainsize]
-        self.train_trg = self.src_final[0:trainsize]
+        self.train_trg = self.trg_final[0:trainsize]
+
         
-        self.trg_num = len(self.trg_stoi)
         self.validate_src = self.src_final[trainsize:trainsize+validatesize]
-        self.validate_trg = self.src_final[trainsize:trainsize+validatesize]
+        self.validate_trg = self.trg_final[trainsize:trainsize+validatesize]
         self.test_src = self.src_final[-testsize:]
-        self.test_trg = self.src_final[-testsize:]
+        self.test_trg = self.trg_final[-testsize:]
 
 
 
@@ -104,11 +105,30 @@ class Dataload:
             datatrg = self.validate_trg
         for i in range(num_batches):
             sample = random.sample(xrange(len(datasrc)), batch_size)
-            datasrcbatch = torch.LongTensor([ datasrc[j] for j in  sample])
-            datatrgbatch = torch.LongTensor([ datatrg[j] for j in  sample])
+            datasrcbatch_temp = [datasrc[j] for j in sample]
+            datatrgbatch_temp = [datatrg[j] for j in sample]
+            datasrcbatch = []
+            datatrgbatch = []
+            for pair in reversed(sorted(enumerate(datasrcbatch_temp), key=lambda x:len(x[1]))):
+                datasrcbatch.append(pair[1])
+                datatrgbatch.append(datatrgbatch_temp[pair[0]])
+            
+            src_lengths = [self.maxlen] * batch_size#[len(i) for i in datasrcbatch]
+            trg_lengths = [self.maxlen - 1] * batch_size#[len(i) for i in datatrgbatch]
+            for each in datasrcbatch:
+                j = len(each)
+                while j < self.maxlen:
+                    each.append(0)
+                    j += 1
+            for each in datatrgbatch:
+                j = len(each)
+                while j < self.maxlen:
+                    each.append(0)
+                    j += 1
+            
+            datasrcbatch = torch.LongTensor(datasrcbatch)
+            datatrgbatch = torch.LongTensor(datatrgbatch)
             datasrcbatch = datasrcbatch.cuda() if init.USE_CUDA else datasrcbatch
             datatrgbatch = datatrgbatch.cuda() if init.USE_CUDA else datatrgbatch
-            src_lengths = [self.maxlen] * batch_size
-            trg_lengths = [self.maxlen] * batch_size
             yield Batch((datasrcbatch, src_lengths), (datatrgbatch, trg_lengths), pad_index=0)
         

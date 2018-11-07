@@ -1,0 +1,300 @@
+Epoch 0
+Epoch Step: 50 Loss: 23.494078 Tokens per Sec: 1623.618365
+Epoch Step: 100 Loss: 21.732668 Tokens per Sec: 2212.332202
+Evaluation perplexity: 27.970291
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'K L')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'K L')
+()
+Epoch 1
+Epoch Step: 50 Loss: 18.675789 Tokens per Sec: 2129.010253
+Epoch Step: 100 Loss: 16.168980 Tokens per Sec: 1907.505909
+Evaluation perplexity: 18.462709
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'M AH0 L AE1 S L AE1 S L AE1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'K S S S S S S S S S')
+()
+Epoch 2
+Epoch Step: 50 Loss: 17.150909 Tokens per Sec: 1717.276548
+Epoch Step: 100 Loss: 14.523730 Tokens per Sec: 1714.400224
+Evaluation perplexity: 12.694963
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'M AE1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 S S S S S S S S')
+()
+Epoch 3
+Epoch Step: 50 Loss: 13.435698 Tokens per Sec: 1730.098490
+Epoch Step: 100 Loss: 12.111574 Tokens per Sec: 1317.897679
+Evaluation perplexity: 8.513224
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Epoch 4
+Epoch Step: 50 Loss: 10.822495 Tokens per Sec: 1570.377028
+Epoch Step: 100 Loss: 9.931343 Tokens per Sec: 1540.252174
+Evaluation perplexity: 6.314858
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M S EH1 M S EH1 M S')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 5
+Epoch Step: 50 Loss: 9.352263 Tokens per Sec: 1222.687670
+Epoch Step: 100 Loss: 9.201824 Tokens per Sec: 1574.884730
+Evaluation perplexity: 4.758002
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M EH1 M EH1 M EH1 M EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Epoch 6
+Epoch Step: 50 Loss: 10.702989 Tokens per Sec: 1423.694898
+Epoch Step: 100 Loss: 9.741861 Tokens per Sec: 1599.824110
+Evaluation perplexity: 4.423196
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M EH1 M EH1 M EH1 M EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 T S S S EH1 S EH1 S')
+()
+Epoch 7
+Epoch Step: 50 Loss: 8.304958 Tokens per Sec: 1403.479662
+Epoch Step: 100 Loss: 7.935802 Tokens per Sec: 1528.118388
+Evaluation perplexity: 3.481638
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M EH1 M EH1 M EH1 M EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 T S S S S S S S')
+()
+Epoch 8
+Epoch Step: 50 Loss: 8.302948 Tokens per Sec: 1417.866731
+Epoch Step: 100 Loss: 6.759138 Tokens per Sec: 1470.625869
+Evaluation perplexity: 3.435957
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M EH1 S EH1 M EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S T S S EH1 S EH1 S EH1 S')
+()
+Epoch 9
+Epoch Step: 50 Loss: 6.776905 Tokens per Sec: 1628.964042
+Epoch Step: 100 Loss: 6.048960 Tokens per Sec: 1376.687622
+Evaluation perplexity: 3.405311
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M S EH1 M S EH1 M S')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 10
+Epoch Step: 50 Loss: 6.649585 Tokens per Sec: 1443.817798
+Epoch Step: 100 Loss: 6.733788 Tokens per Sec: 1280.422399
+Evaluation perplexity: 2.939747
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M S EH1 S EH1 M S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 11
+Epoch Step: 50 Loss: 7.040530 Tokens per Sec: 1305.428990
+Epoch Step: 100 Loss: 6.209564 Tokens per Sec: 1292.317742
+Evaluation perplexity: 2.812016
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 12
+Epoch Step: 50 Loss: 5.590365 Tokens per Sec: 1312.101436
+Epoch Step: 100 Loss: 6.014178 Tokens per Sec: 1565.259940
+Evaluation perplexity: 2.629265
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 13
+Epoch Step: 50 Loss: 6.494050 Tokens per Sec: 1490.418357
+Epoch Step: 100 Loss: 5.699488 Tokens per Sec: 1310.599756
+Evaluation perplexity: 2.693793
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 M S EH1 S EH1 S EH1 S')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 14
+Epoch Step: 50 Loss: 6.100617 Tokens per Sec: 1472.308476
+Epoch Step: 100 Loss: 5.885765 Tokens per Sec: 1307.396512
+Evaluation perplexity: 2.467334
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 15
+Epoch Step: 50 Loss: 6.342622 Tokens per Sec: 1714.431173
+Epoch Step: 100 Loss: 5.778967 Tokens per Sec: 1603.764169
+Evaluation perplexity: 2.418833
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 16
+Epoch Step: 50 Loss: 5.845165 Tokens per Sec: 1923.679579
+Epoch Step: 100 Loss: 6.790895 Tokens per Sec: 1838.480306
+Evaluation perplexity: 2.313522
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S S S S S S S S S S')
+()
+Epoch 17
+Epoch Step: 50 Loss: 5.337749 Tokens per Sec: 1736.945707
+Epoch Step: 100 Loss: 4.160004 Tokens per Sec: 1829.564355
+Evaluation perplexity: 2.282764
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 S S S S S S S S')
+()
+Epoch 18
+Epoch Step: 50 Loss: 5.335663 Tokens per Sec: 1921.537469
+Epoch Step: 100 Loss: 4.437566 Tokens per Sec: 1912.287355
+Evaluation perplexity: 2.224784
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S T S S S S S S S S')
+()
+Epoch 19
+Epoch Step: 50 Loss: 5.519020 Tokens per Sec: 2217.392995
+Epoch Step: 100 Loss: 4.330514 Tokens per Sec: 2296.154680
+Evaluation perplexity: 2.072192
+()
+Example #1
+('Src : ', '<s> s e m i t i c </s> <pad>')
+('Trg : ', 'S AH0 M IH1 T IH0 K </s> <pad>')
+('Pred: ', 'S EH1 S EH1 S EH1 S EH1 S EH1')
+()
+Example #2
+('Src : ', '<s> s t e a k </s> <pad> <pad> <pad>')
+('Trg : ', 'S T EY1 K </s> <pad> <pad> <pad> <pad>')
+('Pred: ', 'S EH1 S S S S S S S S')
+()

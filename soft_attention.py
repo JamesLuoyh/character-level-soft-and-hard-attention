@@ -30,6 +30,7 @@ class SoftAttention(nn.Module):
         
         # Mask out invalid positions.
         # The mask marks valid positions so we invert it using `mask & 0`.
+        # print scores
         scores.data.masked_fill_(mask == 0, -float('inf'))
         
         # Turn scores to probabilities.
