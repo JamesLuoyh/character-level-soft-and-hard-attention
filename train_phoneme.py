@@ -32,10 +32,11 @@ def train_phoneme(num_layers, lr, batch_size, hidden,
                   train.SimpleLossCompute(model.generator, criterion, optim))
         model.eval()
         with torch.no_grad():
-            perplexity = train.run_epoch(eval_data, model,
+            perplexity, accuracy = train.run_epoch(eval_data, model,
                                    train.SimpleLossCompute(model.generator, criterion, None))
             
             print("Evaluation perplexity: %f" % perplexity)
+            print("Evaluation accuracy: %f" % accuracy)
             dev_perplexities.append(perplexity)
             print_e.print_examples(eval_data, dataset, model, n=2, max_len=maxlen)
     return dev_perplexities

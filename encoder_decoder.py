@@ -11,15 +11,14 @@ class EncoderDecoder(nn.Module):
         self.generator = generator
 
     def forward(self, src, trg, src_mask, trg_mask, src_lengths, trg_lengths):
-        encoder_hidden, encoderh_final, encoderc_final = self.encode(src, src_mask,
-                                                                     src_lengths)
-        return self.decode(encoder_hidden, encoderh_final, encoderc_final,
+        encoder_hidden, encoder_final = self.encode(src, src_mask, src_lengths)
+        return self.decode(encoder_hidden, encoder_final,
                            src_mask, trg, trg_mask)
 
     def encode(self, src, src_mask, src_lengths):
         return self.encoder(self.src_embed(src), src_mask, src_lengths)
 
-    def decode(self, encoder_hidden, encoderh_final, encoderc_final, src_mask,
-               trg, trg_mask, decoder_hidden=None):
-        return self.decoder(self.trg_embed(trg), encoder_hidden, encoderh_final,
-                            encoderc_final, src_mask, trg_mask, hidden=decoder_hidden)
+    def decode(self, encoder_hidden, encoder_final, src_mask,
+               trg, trg_mask, decoder_hidden=None, decoder_cell=None):
+        return self.decoder(self.trg_embed(trg), encoder_hidden, encoder_final,
+                             src_mask, trg_mask, hidden=decoder_hidden, cell=decoder_cell)

@@ -5,19 +5,20 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
     """Greedily decode a sentence."""
 
     with torch.no_grad():
-        encoder_hidden, encoder_finalh, encoder_finalc = model.encode(src, src_mask, src_lengths)
+        encoder_hidden, encoder_final = model.encode(src, src_mask, src_lengths)
         prev_y = torch.ones(1, 1).fill_(sos_index).type_as(src)
         trg_mask = torch.ones_like(prev_y)
 
     output = []
     attention_scores = []
     hidden = None
+    cell = None
 
     for i in range(max_len):
         with torch.no_grad():
-            out, hidden, pre_output = model.decode(
-              encoder_hidden, encoder_finalh, encoder_finalc, src_mask,
-              prev_y, trg_mask, hidden)
+            out, (hidden, cell), pre_output = model.decode(
+              encoder_hidden, encoder_final, src_mask,
+              prev_y, trg_mask, hidden, cell)
 
             # we predict from the pre-output layer, which is
             # a combination of Decoder state, prev emb, and context

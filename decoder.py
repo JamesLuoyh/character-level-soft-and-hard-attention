@@ -19,8 +19,8 @@ class Decoder(nn.Module):
         # self.rnn = nn.GRU(emb_size + 2 * hidden_size, hidden_size, num_layers,
         #                    batch_first=True,  dropout=dropout)
 
-        self.bridge = nn.Linear(2 * hidden_size, hidden_size, bias=True) if bridge else None
-
+        self.bridgeh = nn.Linear(2 * hidden_size, hidden_size, bias=True) if bridge else None
+        self.bridgec = nn.Linear(2 * hidden_size, hidden_size, bias=True) if bridge else None
         self.dropout_layer = nn.Dropout(p=dropout)
         self.pre_output_layer = nn.Linear(hidden_size + 2 * hidden_size + emb_size,
                                           hidden_size, bias=False)
@@ -46,17 +46,17 @@ class Decoder(nn.Module):
 
         return output, hidden, cell, context, pre_output
 
-    def forward(self, trg_embed, encoder_hidden, encoderh_final, encoderc_final,
+    def forward(self, trg_embed, encoder_hidden, encoder_final,
                 src_mask, trg_mask, hidden=None, cell=None, max_len=None):
         
         if max_len is None:
             max_len = trg_mask.size(-1)
 
         if hidden is None:
-            hidden = self.init_hidden(encoderh_final)
+            hidden = self.init_hidden(encoder_final[0])
         
         if cell is None:
-            cell = self.init_cell(encoderc_final)
+            cell = self.init_cell(encoder_final[1])
         
         # proj_key = self.attention.key_layer(encoder_hidden)
         decoder_states = []
@@ -72,16 +72,16 @@ class Decoder(nn.Module):
 
         decoder_states = torch.cat(decoder_states, dim=1)
         pre_output_vectors = torch.cat(pre_output_vectors, dim=1)
-        return decoder_states, hidden, pre_output_vectors
+        return decoder_states, (hidden, cell), pre_output_vectors
 
     def init_hidden(self, encoderh_final):
         if encoderh_final is None:
             return None
         
-        return torch.tanh(self.bridge(encoderh_final))
+        return torch.tanh(self.bridgeh(encoderh_final))
 
     def init_cell(self, encoderc_final):
         if encoderc_final is None:
             return None
         
-        return torch.tanh(self.bridge(encoderc_final))
+        return torch.tanh(self.bridgec(encoderc_final))

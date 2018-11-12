@@ -23,8 +23,8 @@ class SoftAttention(nn.Module):
         # Calculate scores.
         # TODO: is this correct?
         # expand
-        query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
-
+        # query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
+        query_proj = query_proj.expand(-1, encoder_proj.size(1), -1).contiguous()
         scores = self.attention_layer(query_proj, encoder_proj)
         scores = scores.squeeze(2).unsqueeze(1)
         
