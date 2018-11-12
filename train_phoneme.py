@@ -11,12 +11,12 @@ import argparse
 import print_example as print_e
 # import sacrebleu
 def train_phoneme(num_layers, lr, batch_size, hidden,
-                  numepoch, dropout, inputfeeding, cuda, maxlen):
+                  numepoch, dropout, inputfeeding, cuda, maxlen, soft=True):
     dataset = Dataload(maxlen=maxlen)
     criterion = nn.NLLLoss(ignore_index=0, reduction='sum')
     model = full_model.make_model(dataset.src_num, dataset.trg_num, emb_size=32,
                                   hidden_size=hidden, num_layers=num_layers, dropout=dropout,
-                                  inputfeeding=inputfeeding)
+                                  inputfeeding=inputfeeding, soft=soft)
     optim = torch.optim.Adam(model.parameters(), lr=lr)
     eval_data = list(dataset.data_gen(batch_size=1, num_batches=100, eval=True))
     dev_perplexities = []
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     parser.add_argument("--inputfeeding", action="store_true",
                         help="Whether we use input feeding")
     parser.add_argument("--attention", type=str,
-                        default='soft',
+                        default="soft",
                         help="Input soft or hard for the attention model")
     parser.add_argument("--cuda", action="store_true",
                         help="Whether we want to use GPU")
@@ -85,5 +85,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     dev_perplexities = train_phoneme(args.layer, args.lr, args.batchsize,
                   args.hidden, args.epoch, args.dropout,
-                  args.inputfeeding, args.cuda, args.maxlen)
+                  args.inputfeeding, args.cuda, args.maxlen, args.attention is "soft")
     plot_perplexity(dev_perplexities)
