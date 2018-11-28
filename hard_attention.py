@@ -18,11 +18,9 @@ class HardAttention(nn.Module):
         encoder_proj = self.encoder_layer(value)
         #[B, S, H]
         query_proj = self.query_layer(query)
-        #B, 1, H]
+        #[B, 1, H]
 
         # Calculate scores.
-        # TODO: is this correct?
-        # expand
         # query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
         query_proj = query_proj.expand(-1, encoder_proj.size(1), -1).contiguous()
         scores = self.attention_layer(query_proj, encoder_proj)
@@ -35,9 +33,7 @@ class HardAttention(nn.Module):
         
         # Turn scores to probabilities.
         alphas = F.softmax(scores, dim=-1)
-        self.alphas = alphas        
-        
+        self.alphas = alphas
         # The context vector is the weighted sum of the values.
         # context = torch.bmm(alphas, value)
-
-        return alphas
+        return alphas, encoder_proj

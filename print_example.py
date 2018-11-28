@@ -13,9 +13,10 @@ def greedy_decode(model, src, src_mask, src_lengths, max_len=100, sos_index=1, e
     attention_scores = []
     hidden = None
     cell = None
-
+    
     for i in range(max_len):
         with torch.no_grad():
+            
             out, (hidden, cell), pre_output = model.decode(
               encoder_hidden, encoder_final, src_mask,
               prev_y, trg_mask, hidden, cell)
