@@ -23,6 +23,10 @@ def train_phoneme(num_layers, lr, batch_size, hidden,
 
     if init.USE_CUDA and cuda:
         model.cuda()
+    min_perplexity = 100
+    minp_iter = 0
+    max_accuracy = 0
+    maxa_iter = 0
     for epoch in range(numepoch):
         print("Epoch %d" % epoch)
 
@@ -34,11 +38,18 @@ def train_phoneme(num_layers, lr, batch_size, hidden,
         with torch.no_grad():
             perplexity, accuracy = train.run_epoch(eval_data, model,
                                    train.SimpleLossCompute(model.generator, criterion, None))
-            
+            if perplexity < min_perplexity:
+                min_perplexity = perplexity
+                minp_iter = epoch
+            if accuracy > max_accuracy:
+                max_accuracy = accuracy
+                maxa_iter = epoch
             print("Evaluation perplexity: %f" % perplexity)
             print("Evaluation accuracy: %f" % accuracy)
             dev_perplexities.append(perplexity)
             print_e.print_examples(eval_data, dataset, model, n=2, max_len=maxlen)
+    print("min perplexity: %f at %d iterations" % (min_perplexity, minp_iter))
+    print("max accuracy: %f at %d iterations" % (max_accuracy, maxa_iter))
     return dev_perplexities
 
 def plot_perplexity(perplexities):

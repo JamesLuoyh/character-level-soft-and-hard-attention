@@ -1,0 +1,239 @@
+Epoch 0
+Epoch Step: 50 Loss: 21.067638 accuracy 0.000000 Tokens per Sec: 2296.094978
+Epoch Step: 100 Loss: 18.855270 accuracy 0.000000 Tokens per Sec: 2405.517274
+Evaluation perplexity: 18.000856
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'B N AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'S T S T')
+
+Epoch 1
+Epoch Step: 50 Loss: 16.581945 accuracy 0.000000 Tokens per Sec: 1997.004180
+Epoch Step: 100 Loss: 16.124224 accuracy 0.000000 Tokens per Sec: 2362.900055
+Evaluation perplexity: 7.786222
+Evaluation accuracy: 0.001546
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'K N AH0 N AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'S EH1 S T S')
+
+Epoch 2
+Epoch Step: 50 Loss: 12.141418 accuracy 0.000000 Tokens per Sec: 2064.459245
+Epoch Step: 100 Loss: 11.204621 accuracy 0.000000 Tokens per Sec: 2192.534810
+Evaluation perplexity: 4.464779
+Evaluation accuracy: 0.009274
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'K AA1 N AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'S EH1 G AH0 T S')
+
+Epoch 3
+Epoch Step: 50 Loss: 8.829635 accuracy 0.000000 Tokens per Sec: 2305.379536
+Epoch Step: 100 Loss: 6.875961 accuracy 0.000048 Tokens per Sec: 2366.262544
+Evaluation perplexity: 3.324500
+Evaluation accuracy: 0.017002
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'AA1 N AH0 N AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'EH1 G AH0 T S')
+
+Epoch 4
+Epoch Step: 50 Loss: 7.650075 accuracy 0.000193 Tokens per Sec: 2330.652428
+Epoch Step: 100 Loss: 5.982132 accuracy 0.000337 Tokens per Sec: 2392.095908
+Evaluation perplexity: 2.795153
+Evaluation accuracy: 0.023184
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW1 N EH1 N AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'EH1 G IH0 T S')
+
+Epoch 5
+Epoch Step: 50 Loss: 6.443318 accuracy 0.000479 Tokens per Sec: 2332.150206
+Epoch Step: 100 Loss: 6.992001 accuracy 0.000430 Tokens per Sec: 2394.678989
+Evaluation perplexity: 2.488296
+Evaluation accuracy: 0.026275
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N AH0 AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'EH1 G IH0 SH T S')
+
+Epoch 6
+Epoch Step: 50 Loss: 5.293470 accuracy 0.000858 Tokens per Sec: 2029.573567
+Epoch Step: 100 Loss: 5.051506 accuracy 0.000618 Tokens per Sec: 2053.485537
+Evaluation perplexity: 2.226178
+Evaluation accuracy: 0.030912
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 AH0 N EH1 N AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 G IH0 T S')
+
+Epoch 7
+Epoch Step: 50 Loss: 5.129499 accuracy 0.001057 Tokens per Sec: 2230.346282
+Epoch Step: 100 Loss: 7.014062 accuracy 0.000766 Tokens per Sec: 2236.919078
+Evaluation perplexity: 2.092989
+Evaluation accuracy: 0.043277
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N AH0 AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'EH1 G IH0 T S')
+
+Epoch 8
+Epoch Step: 50 Loss: 4.780166 accuracy 0.000763 Tokens per Sec: 2276.228044
+Epoch Step: 100 Loss: 5.330435 accuracy 0.001000 Tokens per Sec: 2081.804902
+Evaluation perplexity: 2.282595
+Evaluation accuracy: 0.041731
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 AA1 N AH0 AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 IY1 T S')
+
+Epoch 9
+Epoch Step: 50 Loss: 3.790967 accuracy 0.001433 Tokens per Sec: 2317.706281
+Epoch Step: 100 Loss: 4.243050 accuracy 0.001143 Tokens per Sec: 2603.210542
+Evaluation perplexity: 1.937237
+Evaluation accuracy: 0.043277
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N AH0 AH0 L AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 G IY0 AH0 T S')
+
+Epoch 10
+Epoch Step: 50 Loss: 4.199426 accuracy 0.002075 Tokens per Sec: 2157.559494
+Epoch Step: 100 Loss: 3.809053 accuracy 0.001568 Tokens per Sec: 2330.775064
+Evaluation perplexity: 1.942613
+Evaluation accuracy: 0.051005
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N IY0 AH0 N AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 IY1 T S')
+
+Epoch 11
+Epoch Step: 50 Loss: 3.941640 accuracy 0.000963 Tokens per Sec: 2299.231916
+Epoch Step: 100 Loss: 3.836387 accuracy 0.000768 Tokens per Sec: 2460.096386
+Evaluation perplexity: 1.898054
+Evaluation accuracy: 0.052550
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N IY1 AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 IH0 G IH0 T S')
+
+Epoch 12
+Epoch Step: 50 Loss: 3.839581 accuracy 0.001428 Tokens per Sec: 2454.661273
+Epoch Step: 100 Loss: 3.879819 accuracy 0.001288 Tokens per Sec: 2299.132517
+Evaluation perplexity: 1.804572
+Evaluation accuracy: 0.054096
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 OW1 N IY0 AH0 N AH0 L AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 G IY0 IH0 G IY1 T S')
+
+Epoch 13
+Epoch Step: 50 Loss: 3.718503 accuracy 0.001906 Tokens per Sec: 2318.032338
+Epoch Step: 100 Loss: 3.476637 accuracy 0.001948 Tokens per Sec: 2531.394766
+Evaluation perplexity: 1.776774
+Evaluation accuracy: 0.055641
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 N IY1 AH0 N AH0 L IY1 AH0 L')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 G IY1 T S')
+
+Epoch 14
+Epoch Step: 50 Loss: 3.786757 accuracy 0.001626 Tokens per Sec: 2340.923937
+Epoch Step: 100 Loss: 4.868668 accuracy 0.001627 Tokens per Sec: 2129.154483
+Evaluation perplexity: 1.757311
+Evaluation accuracy: 0.058733
+
+Example #1
+('Src : ', "o ' n e a l")
+('Trg : ', 'OW0 N IY1 L')
+('Pred: ', 'OW0 N IY1 AH0 N AH0 L AH0 L AH0')
+
+Example #2
+('Src : ', "e i g h t ' s")
+('Trg : ', 'EY1 T S')
+('Pred: ', 'IY1 IH1 G IH0 G IH0 G IH0 G IY1')

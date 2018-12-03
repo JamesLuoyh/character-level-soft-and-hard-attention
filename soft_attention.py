@@ -35,9 +35,7 @@ class SoftAttention(nn.Module):
         
         # Turn scores to probabilities.
         alphas = F.softmax(scores, dim=-1)
-        self.alphas = alphas        
-        
+        self.alphas = alphas
         # The context vector is the weighted sum of the values.
         context = torch.bmm(alphas, value)
-
         return context, alphas

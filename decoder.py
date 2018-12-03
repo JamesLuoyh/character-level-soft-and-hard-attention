@@ -112,28 +112,30 @@ class Decoder(nn.Module):
         for i in range(max_len):
             prev_embed = trg_embed[:, i].unsqueeze(1)
             output, hidden, cell, pre_output = self.forward_step_hard(
-                prev_embed, encoder_hidden, src_mask, hidden, cell)
-            decoder_states.append(output)
+                prev_embed, encoder_hidden, src_mask, hidden, cell, decoder_states)
             pre_output_vectors.append(pre_output)
 
         decoder_states = torch.cat(decoder_states, dim=1)
         pre_output_vectors = torch.cat(pre_output_vectors, dim=1)
         return decoder_states, (hidden, cell), pre_output_vectors
 
-    def forward_step_hard(self, prev_embed, encoder_hidden, src_mask, hidden, cell):
-        outputs = None
-        # TODO: attention precalculate or update through each step
+    def forward_step_hard(self, prev_embed, encoder_hidden, src_mask, hidden, cell, decoder_states):
         output, (hidden, cell) = self.rnn_nofeed(prev_embed, (hidden, cell))
+        decoder_states.append(output)
         query = hidden[-1].unsqueeze(1)
-        atten_probs, encoder_proj = self.attention(query=query,
+        atten_probs, encoder_proj = self.attention(query=query,#torch.cat(decoder_states, dim=1),
             value=encoder_hidden, mask=src_mask)
-        
+        # decoder_hidden = torch.FloatTensor(decoder_states)
+        # print decoder_hidden.shape
         outputs = None
-        # TODO: separate hidden and cell for each token or one for all and keep updating through each iteration
         for i in range(len(encoder_proj[0])):
-            temp_out = torch.tanh(hidden[-1] + encoder_proj[:,i])
+            # if i < len(decoder_states):
+                #output
+            temp_out = torch.tanh(decoder_states[-1].squeeze(1) + encoder_proj[:,i])
+            # else:
+            #     temp_out = torch.tanh(decoder_states[-1].squeeze(1).fill_(0) + encoder_proj[:,i])
             
-            
+            #logsoftmax
             temp_out = F.softmax(temp_out, dim=-1)
             # pre_output = pre_output.unsqueeze(0)
             temp_out = temp_out.unsqueeze(1)
@@ -141,9 +143,11 @@ class Decoder(nn.Module):
                 outputs = temp_out
             else:
                 outputs = torch.cat((outputs, temp_out), dim=1)
-                
+
         # outputs = F.softmax(outputs, dim=-1)
         final_out = torch.bmm(atten_probs, outputs)
+        final_out = torch.log(final_out)
+        #log(final_out)
         # for i in range(len(pre_outputs)):
         #     print "a"
         #     print atten_probs.shape

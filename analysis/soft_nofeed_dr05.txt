@@ -1,0 +1,552 @@
+Epoch 0
+Epoch Step: 50 Loss: 25.307970 accuracy 0.000000 Tokens per Sec: 782.488657
+Epoch Step: 100 Loss: 23.046806 accuracy 0.000000 Tokens per Sec: 424.824393
+Evaluation perplexity: 16.468517
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a r u s o')
+('Trg : ', 'l a r u s o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'p a n e l i s t')
+('Trg : ', 'p a n e l i s t')
+('Pred: ', 's')
+
+Epoch 1
+Epoch Step: 50 Loss: 20.204817 accuracy 0.000000 Tokens per Sec: 366.444804
+Epoch Step: 100 Loss: 20.981066 accuracy 0.000000 Tokens per Sec: 403.512796
+Evaluation perplexity: 14.400053
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a r u s o')
+('Trg : ', 'l a r u s o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'p a n e l i s t')
+('Trg : ', 'p a n e l i s t')
+('Pred: ', 's')
+
+Epoch 2
+Epoch Step: 50 Loss: 18.676580 accuracy 0.000000 Tokens per Sec: 411.338872
+Epoch Step: 100 Loss: 20.737949 accuracy 0.000000 Tokens per Sec: 465.781088
+Evaluation perplexity: 13.636125
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a r u s o')
+('Trg : ', 'l a r u s o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'p a n e l i s t')
+('Trg : ', 'p a n e l i s t')
+('Pred: ', 's')
+
+Epoch 3
+Epoch Step: 50 Loss: 20.867908 accuracy 0.000000 Tokens per Sec: 444.071762
+Epoch Step: 100 Loss: 20.533804 accuracy 0.000000 Tokens per Sec: 612.394576
+Evaluation perplexity: 13.189744
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a r u s o')
+('Trg : ', 'l a r u s o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'p a n e l i s t')
+('Trg : ', 'p a n e l i s t')
+('Pred: ', 's')
+
+Epoch 4
+^CTraceback (most recent call last):
+  File "train_phoneme.py", line 88, in <module>
+    args.inputfeeding, args.cuda, args.maxlen, args.attention is "soft")
+  File "train_phoneme.py", line 32, in train_phoneme
+    train.SimpleLossCompute(model.generator, criterion, optim))
+  File "/Users/luo/character-level-soft-and-hard-attention/train.py", line 17, in run_epoch
+    loss, correct = loss_compute(pre_output, batch.trg_y, batch.nseqs)
+  File "/Users/luo/character-level-soft-and-hard-attention/train.py", line 59, in __call__
+    loss.backward()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/tensor.py", line 93, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/autograd/__init__.py", line 90, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+KeyboardInterrupt
+D-10-19-63-177:character-level-soft-and-hard-attention luo$ python train_phoneme.py --lr 0.0001 --layer 1 --epoch 15 --maxlen 10 --dropout 0.1 --attention hard
+('CUDA:', False)
+cuda:0
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.1 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+Epoch 0
+^CTraceback (most recent call last):
+  File "train_phoneme.py", line 88, in <module>
+    args.inputfeeding, args.cuda, args.maxlen, args.attention is "soft")
+  File "train_phoneme.py", line 32, in train_phoneme
+    train.SimpleLossCompute(model.generator, criterion, optim))
+  File "/Users/luo/character-level-soft-and-hard-attention/train.py", line 15, in run_epoch
+    batch.src_lengths, batch.trg_lengths
+  File "/Users/luo/character-level-soft-and-hard-attention/encoder_decoder.py", line 16, in forward
+    src_mask, trg, trg_mask)
+  File "/Users/luo/character-level-soft-and-hard-attention/encoder_decoder.py", line 24, in decode
+    src_mask, trg_mask, hidden=decoder_hidden, cell=decoder_cell)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 86, in forward
+    src_mask, trg_mask, hidden, cell, max_len)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 118, in decode_hard
+    prev_embed, encoder_hidden, src_mask, hidden, cell)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 139, in forward_step_hard
+    value=encoder_hidden, mask=src_mask)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/Users/luo/character-level-soft-and-hard-attention/hard_attention.py", line 20, in forward
+    query_proj = self.query_layer(query)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/linear.py", line 55, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/functional.py", line 1026, in linear
+    output = input.matmul(weight.t())
+KeyboardInterrupt
+D-10-19-63-177:character-level-soft-and-hard-attention luo$ python train_phoneme.py --lr 0.0001 --layer 1 --epoch 15 --maxlen 10 --dropout 0 --attention hard
+('CUDA:', False)
+cuda:0
+Epoch 0
+Epoch Step: 50 Loss: 29.337236 accuracy 0.000000 Tokens per Sec: 824.990148
+Epoch Step: 100 Loss: 28.538252 accuracy 0.000000 Tokens per Sec: 895.622135
+Evaluation perplexity: 35.343619
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's y v e r s o n')
+('Trg : ', 's y v e r s o n')
+('Pred: ', 'r a s')
+
+Example #2
+('Src : ', 's e r v e r')
+('Trg : ', 's e r v e r')
+('Pred: ', 'r a s')
+
+Epoch 1
+Epoch Step: 50 Loss: 29.008125 accuracy 0.000000 Tokens per Sec: 861.977368
+Epoch Step: 100 Loss: 25.716007 accuracy 0.000000 Tokens per Sec: 861.424476
+Evaluation perplexity: 32.025174
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's y v e r s o n')
+('Trg : ', 's y v e r s o n')
+('Pred: ', 'r a')
+
+Example #2
+('Src : ', 's e r v e r')
+('Trg : ', 's e r v e r')
+('Pred: ', 'r a')
+
+Epoch 2
+^CTraceback (most recent call last):
+  File "train_phoneme.py", line 88, in <module>
+    args.inputfeeding, args.cuda, args.maxlen, args.attention is "soft")
+  File "train_phoneme.py", line 32, in train_phoneme
+    train.SimpleLossCompute(model.generator, criterion, optim))
+  File "/Users/luo/character-level-soft-and-hard-attention/train.py", line 15, in run_epoch
+    batch.src_lengths, batch.trg_lengths
+  File "/Users/luo/character-level-soft-and-hard-attention/encoder_decoder.py", line 16, in forward
+    src_mask, trg, trg_mask)
+  File "/Users/luo/character-level-soft-and-hard-attention/encoder_decoder.py", line 24, in decode
+    src_mask, trg_mask, hidden=decoder_hidden, cell=decoder_cell)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 86, in forward
+    src_mask, trg_mask, hidden, cell, max_len)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 118, in decode_hard
+    prev_embed, encoder_hidden, src_mask, hidden, cell)
+  File "/Users/luo/character-level-soft-and-hard-attention/decoder.py", line 139, in forward_step_hard
+    value=encoder_hidden, mask=src_mask)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/module.py", line 478, in __call__
+    for hook in self._forward_hooks.values():
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/collections.py", line 121, in values
+    def values(self):
+KeyboardInterrupt
+D-10-19-63-177:character-level-soft-and-hard-attention luo$ python train_phoneme.py --lr 0.0001 --layer 1 --epoch 15 --maxlen 10 --dropout 0 --attention hard
+('CUDA:', False)
+cuda:0
+Epoch 0
+Epoch Step: 50 Loss: 25.782965 accuracy 0.000000 Tokens per Sec: 880.610776
+Epoch Step: 100 Loss: 27.889172 accuracy 0.000000 Tokens per Sec: 888.161210
+Evaluation perplexity: 35.781562
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 'r a s')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 'r a s')
+
+Epoch 1
+Epoch Step: 50 Loss: 26.441315 accuracy 0.000000 Tokens per Sec: 874.425500
+Epoch Step: 100 Loss: 25.928787 accuracy 0.000000 Tokens per Sec: 881.001855
+Evaluation perplexity: 32.540383
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 'r a')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 'r a')
+
+Epoch 2
+Epoch Step: 50 Loss: 25.968496 accuracy 0.000000 Tokens per Sec: 768.506764
+Epoch Step: 100 Loss: 27.529402 accuracy 0.000000 Tokens per Sec: 555.585383
+Evaluation perplexity: 29.140012
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 'r a')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 'r a')
+
+Epoch 3
+Epoch Step: 50 Loss: 26.202911 accuracy 0.000000 Tokens per Sec: 432.170866
+Epoch Step: 100 Loss: 25.125097 accuracy 0.000000 Tokens per Sec: 494.663465
+Evaluation perplexity: 25.751395
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 'r e r e r e r e r e')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 'r e r e r e r e r e')
+
+Epoch 4
+Epoch Step: 50 Loss: 25.111753 accuracy 0.000000 Tokens per Sec: 536.990920
+Epoch Step: 100 Loss: 23.798254 accuracy 0.000000 Tokens per Sec: 624.443464
+Evaluation perplexity: 22.923861
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 'r e r e r e r e r e')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 'r e r e r e r e r e')
+
+Epoch 5
+Epoch Step: 50 Loss: 22.383860 accuracy 0.000000 Tokens per Sec: 561.104145
+Epoch Step: 100 Loss: 23.509758 accuracy 0.000000 Tokens per Sec: 495.485856
+Evaluation perplexity: 20.760209
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 's')
+
+Epoch 6
+Epoch Step: 50 Loss: 21.826860 accuracy 0.000000 Tokens per Sec: 451.799229
+Epoch Step: 100 Loss: 21.322712 accuracy 0.000000 Tokens per Sec: 397.592953
+Evaluation perplexity: 19.275831
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 's')
+
+Epoch 7
+Epoch Step: 50 Loss: 22.441965 accuracy 0.000000 Tokens per Sec: 373.931333
+Epoch Step: 100 Loss: 23.750402 accuracy 0.000000 Tokens per Sec: 3.699060
+Evaluation perplexity: 18.304146
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 's l i f k o')
+('Trg : ', 's l i f k o')
+('Pred: ', 's')
+
+Example #2
+('Src : ', 'g a b a')
+('Trg : ', 'g a b a')
+('Pred: ', 's')
+
+Epoch 8
+Epoch Step: 50 Loss: 21.805855 accuracy 0.000000 Tokens per Sec: 147.681062
+Terminated: 15
+D-10-19-63-177:character-level-soft-and-hard-attention luo$ python train_phoneme.py --lr 0.0007 --layer 1 --epoch 15 --maxlen 10 --dropout 0.5('CUDA:', False)
+cuda:0
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.5 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+Epoch 0
+Epoch Step: 50 Loss: 22.648117 accuracy 0.000000 Tokens per Sec: 2767.602169
+Epoch Step: 100 Loss: 19.697079 accuracy 0.000000 Tokens per Sec: 2855.656560
+Evaluation perplexity: 19.558930
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L L L')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'B EH1 S T')
+
+Epoch 1
+Epoch Step: 50 Loss: 17.332447 accuracy 0.000000 Tokens per Sec: 2818.161096
+Epoch Step: 100 Loss: 12.832935 accuracy 0.000000 Tokens per Sec: 2758.266194
+Evaluation perplexity: 9.021989
+Evaluation accuracy: 0.000000
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L L AH0 N')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'B R S S Z')
+
+Epoch 2
+Epoch Step: 50 Loss: 12.408413 accuracy 0.000000 Tokens per Sec: 2636.550031
+Epoch Step: 100 Loss: 11.385832 accuracy 0.000000 Tokens per Sec: 2401.868479
+Evaluation perplexity: 5.154345
+Evaluation accuracy: 0.004695
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L L AH0 N')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R S ER0')
+
+Epoch 3
+Epoch Step: 50 Loss: 12.162754 accuracy 0.000094 Tokens per Sec: 2325.870618
+Epoch Step: 100 Loss: 10.107198 accuracy 0.000095 Tokens per Sec: 2421.902641
+Evaluation perplexity: 3.647025
+Evaluation accuracy: 0.009390
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N K')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 S ER0')
+
+Epoch 4
+Epoch Step: 50 Loss: 7.666980 accuracy 0.000096 Tokens per Sec: 2470.110201
+Epoch Step: 100 Loss: 8.794551 accuracy 0.000239 Tokens per Sec: 2544.343344
+Evaluation perplexity: 2.854811
+Evaluation accuracy: 0.026604
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N K')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 5
+Epoch Step: 50 Loss: 5.915599 accuracy 0.000000 Tokens per Sec: 2493.996147
+Epoch Step: 100 Loss: 8.039338 accuracy 0.000287 Tokens per Sec: 2555.479459
+Evaluation perplexity: 2.525187
+Evaluation accuracy: 0.025039
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N K')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 6
+Epoch Step: 50 Loss: 6.336876 accuracy 0.000191 Tokens per Sec: 2728.975193
+Epoch Step: 100 Loss: 6.442781 accuracy 0.000286 Tokens per Sec: 2697.460850
+Evaluation perplexity: 2.304120
+Evaluation accuracy: 0.025039
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 7
+Epoch Step: 50 Loss: 4.664191 accuracy 0.000575 Tokens per Sec: 2400.750066
+Epoch Step: 100 Loss: 5.544045 accuracy 0.000429 Tokens per Sec: 2368.027934
+Evaluation perplexity: 2.214260
+Evaluation accuracy: 0.029734
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 8
+Epoch Step: 50 Loss: 6.093790 accuracy 0.000284 Tokens per Sec: 2812.604696
+Epoch Step: 100 Loss: 7.005279 accuracy 0.000430 Tokens per Sec: 2778.374673
+Evaluation perplexity: 2.133636
+Evaluation accuracy: 0.039124
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 9
+Epoch Step: 50 Loss: 5.324114 accuracy 0.000764 Tokens per Sec: 2694.021319
+Epoch Step: 100 Loss: 5.277374 accuracy 0.000667 Tokens per Sec: 2826.237396
+Evaluation perplexity: 2.021922
+Evaluation accuracy: 0.037559
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 10
+Epoch Step: 50 Loss: 5.076550 accuracy 0.000668 Tokens per Sec: 2821.515817
+Epoch Step: 100 Loss: 8.300040 accuracy 0.000713 Tokens per Sec: 2834.243873
+Evaluation perplexity: 1.917099
+Evaluation accuracy: 0.042254
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 11
+Epoch Step: 50 Loss: 5.809143 accuracy 0.000571 Tokens per Sec: 2832.090376
+Epoch Step: 100 Loss: 4.386744 accuracy 0.000758 Tokens per Sec: 2857.310599
+Evaluation perplexity: 1.923952
+Evaluation accuracy: 0.045383
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AA1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 12
+Epoch Step: 50 Loss: 5.034630 accuracy 0.001049 Tokens per Sec: 2826.631485
+Epoch Step: 100 Loss: 4.837249 accuracy 0.000954 Tokens per Sec: 2825.143002
+Evaluation perplexity: 1.861126
+Evaluation accuracy: 0.053208
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AE1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 13
+Epoch Step: 50 Loss: 4.219499 accuracy 0.000668 Tokens per Sec: 2802.236347
+Epoch Step: 100 Loss: 3.464591 accuracy 0.000764 Tokens per Sec: 2336.934660
+Evaluation perplexity: 1.785386
+Evaluation accuracy: 0.056338
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AA1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
+
+Epoch 14
+Epoch Step: 50 Loss: 4.051764 accuracy 0.000849 Tokens per Sec: 2799.577831
+Epoch Step: 100 Loss: 3.616939 accuracy 0.000901 Tokens per Sec: 2782.060570
+Evaluation perplexity: 1.737329
+Evaluation accuracy: 0.057903
+
+Example #1
+('Src : ', 'l a u n c h')
+('Trg : ', 'L AO1 N CH')
+('Pred: ', 'L AA1 N CH')
+
+Example #2
+('Src : ', 'f r e s h e r')
+('Trg : ', 'F R EH1 SH ER0')
+('Pred: ', 'F R EH1 SH ER0')
