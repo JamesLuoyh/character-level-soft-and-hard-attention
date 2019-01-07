@@ -20,12 +20,7 @@ class HardAttention(nn.Module):
         query_proj = self.query_layer(query)
         #[B, i, H]
         # Calculate scores.
-        # query_proj = torch.cat([query_proj]*encoder_proj.size(1), 1)
         query_proj = query_proj.expand(-1, encoder_proj.size(1), -1).contiguous()
-        # input = torch.zeros_like(encoder_proj)
-        # for i in range(len(input)):
-        #     for j in range(len(query_proj[0])):
-        #         input[i][j] = query_proj[i][j]
 
         scores = self.attention_layer(query_proj, encoder_proj)
         scores = scores.squeeze(2).unsqueeze(1)

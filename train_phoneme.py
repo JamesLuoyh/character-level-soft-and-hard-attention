@@ -9,7 +9,6 @@ import full_model
 from dataload import Dataload
 import argparse
 import print_example as print_e
-# import sacrebleu
 def train_phoneme(num_layers, lr, batch_size, hidden,
                   numepoch, dropout, inputfeeding, cuda, maxlen, soft=True):
     dataset = Dataload(maxlen=maxlen)
@@ -31,7 +30,7 @@ def train_phoneme(num_layers, lr, batch_size, hidden,
         print("Epoch %d" % epoch)
 
         model.train()
-        data = dataset.data_gen(batch_size=batch_size, num_batches=100)
+        data = dataset.data_gen(batch_size=batch_size, num_batches=100, eval=True)
         train.run_epoch(data, model,
                   train.SimpleLossCompute(model.generator, criterion, optim))
         model.eval()
@@ -96,5 +95,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     dev_perplexities = train_phoneme(args.layer, args.lr, args.batchsize,
                   args.hidden, args.epoch, args.dropout,
-                  args.inputfeeding, args.cuda, args.maxlen, args.attention is "soft")
+                  args.inputfeeding, args.cuda, args.maxlen, args.attention == "soft")
     plot_perplexity(dev_perplexities)

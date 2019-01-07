@@ -14,7 +14,7 @@ class Decoder(nn.Module):
         self.dropout = dropout
         self.inputfeeding = inputfeeding
         self.soft = soft
-        #
+        
         self.rnn_feed = nn.LSTM(emb_size + 2 * hidden_size, hidden_size, num_layers,
                            batch_first=True,  dropout=dropout)
         self.rnn_nofeed = nn.LSTM(emb_size, hidden_size, num_layers,
@@ -34,7 +34,6 @@ class Decoder(nn.Module):
     def forward_step(self, prev_embed, encoder_hidden, src_mask, hidden, cell,
                      context):
         # input feeding
-        # context = torch.zeros(hidden.shape[0], encoder_hidden)
         if self.inputfeeding:
             rnn_input = torch.cat([prev_embed, context], dim=2)
             output, (hidden, cell) = self.rnn_feed(rnn_input, (hidden, cell))
@@ -58,7 +57,6 @@ class Decoder(nn.Module):
         if cell is None:
             cell = self.init_cell(encoder_final[1])
         
-        # proj_key = self.attention.key_layer(encoder_hidden)
         decoder_states = []
         pre_output_vectors = []
         context = torch.zeros(encoder_hidden.shape[0], 1, 2 * hidden.shape[-1])
@@ -103,7 +101,6 @@ class Decoder(nn.Module):
                 src_mask, trg_mask, hidden=None, cell=None, max_len=None):
         if hidden is None:
             hidden = self.init_hidden(encoder_final[0])
-            # 
         if cell is None:
             cell = self.init_cell(encoder_final[1])
         # proj_key = self.attention.key_layer(encoder_hidden)
@@ -126,37 +123,20 @@ class Decoder(nn.Module):
         atten_probs, encoder_proj = self.attention(query=query,#torch.cat(decoder_states, dim=1),
             value=encoder_hidden, mask=src_mask)
         # decoder_hidden = torch.FloatTensor(decoder_states)
-        # print decoder_hidden.shape
         outputs = None
         for i in range(len(encoder_proj[0])):
-            # if i < len(decoder_states):
-                #output
             temp_out = torch.tanh(decoder_states[-1].squeeze(1) + encoder_proj[:,i])
-            # else:
-            #     temp_out = torch.tanh(decoder_states[-1].squeeze(1).fill_(0) + encoder_proj[:,i])
             
             #logsoftmax
             temp_out = F.softmax(temp_out, dim=-1)
-            # pre_output = pre_output.unsqueeze(0)
             temp_out = temp_out.unsqueeze(1)
             if outputs is None:
                 outputs = temp_out
             else:
                 outputs = torch.cat((outputs, temp_out), dim=1)
 
-        # outputs = F.softmax(outputs, dim=-1)
         final_out = torch.bmm(atten_probs, outputs)
         final_out = torch.log(final_out)
-        #log(final_out)
-        # for i in range(len(pre_outputs)):
-        #     print "a"
-        #     print atten_probs.shape
-        #     print pre_outputs.shape
-            # temp_outputs = torch.bmm(atten_probs, pre_outputs[i])
-            # if final_out is None:
-            #     final_out = pre_outputs
-            # else:
-            #     final_out = torch.cat((final_out,temp_outputs), dim=0)
         final_out = torch.cat([prev_embed, final_out], dim=2)
         final_out = self.dropout_layer(final_out)
         final_out = self.pre_output_layer_hard(final_out)
